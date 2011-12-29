@@ -18,29 +18,18 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 A set of fonts that extend the txfonts bundle with small caps
 and old style numbers, together with Greek support. The
 extensions are made with modifications of the GNU Freefont.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -119,7 +108,6 @@ extensions are made with modifications of the GNU Freefont.
 %doc %{_texmfdistdir}/source/fonts/txfontsb/FreeSerifbBold.sfd
 %doc %{_texmfdistdir}/source/fonts/txfontsb/FreeSerifbBoldItalic.sfd
 %doc %{_texmfdistdir}/source/fonts/txfontsb/FreeSerifbItalic.sfd
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -130,5 +118,3 @@ extensions are made with modifications of the GNU Freefont.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}

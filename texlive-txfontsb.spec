@@ -118,3 +118,16 @@ extensions are made with modifications of the GNU Freefont.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.1-2
++ Revision: 757163
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.1-1
++ Revision: 719822
+- texlive-txfontsb
+- texlive-txfontsb
+- texlive-txfontsb
+

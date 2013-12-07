@@ -6,7 +6,7 @@
 # catalog-version 1.1
 Name:		texlive-txfontsb
 Version:	1.1
-Release:	5
+Release:	6
 Summary:	Extensions to txfonts, using GNU Freefont
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/txfontsb

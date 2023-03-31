@@ -1,6 +1,6 @@
 Name:		texlive-txfontsb
 Version:	54512
-Release:	1
+Release:	2
 Summary:	Extensions to txfonts, using GNU Freefont
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/txfontsb

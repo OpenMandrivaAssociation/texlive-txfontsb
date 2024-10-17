@@ -3,7 +3,7 @@ Version:	54512
 Release:	2
 Summary:	Extensions to txfonts, using GNU Freefont
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/txfontsb
+URL:		https://www.ctan.org/tex-archive/fonts/txfontsb
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/txfontsb.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/txfontsb.doc.r%{version}.tar.xz

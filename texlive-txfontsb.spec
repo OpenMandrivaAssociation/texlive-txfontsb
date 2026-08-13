@@ -1,9 +1,10 @@
 %global tl_name txfontsb
 %global tl_revision 54512
+%global tl_version 1.1.1
 
 Name:		texlive-%{tl_name}
 Epoch:		1
-Version:	1.1.1
+Version:	%{tl_version}
 Release:	%{tl_revision}.1
 Summary:	Extensions to txfonts, using GNU Freefont
 Group:		Publishing
@@ -14,10 +15,18 @@ Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/txfontsb.doc.r%{
 Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/txfontsb.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
 BuildSystem:	texlive
-Provides:	texlive(%{tl_name}) = %{tl_revision}
+Requires:	texlive-tlpkg
+Provides:	texlive(%{tl_name}) = %{version}
 
 %description
 A set of fonts that extend the txfonts bundle with small caps and old
 style numbers, together with Greek support. The extensions are made with
 modifications of the GNU Freefont.
 
+
+%install -a
+mkdir -p %{buildroot}%{_texmf_updmap_d}
+cat > %{buildroot}%{_texmf_updmap_d}/%{tl_name} <<'TL_DROPIN_EOF'
+# from txfontsb:
+Map gptimes.map
+TL_DROPIN_EOF
